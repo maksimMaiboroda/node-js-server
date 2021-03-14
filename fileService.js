@@ -4,11 +4,11 @@ import * as path from 'path';
 class FileService {
     saveFile (file) {
         try {
-            const fileName = uuid.v4() + '.jpg';
-            const filePath = path.resolve('static', filename);
-            file.mv(filePath);
+            const fileName = `${uuid.v4()} .jpg`;
 
-            console.log(fileName)
+            const filePath = path.resolve('static', fileName);
+            file.mv(filePath);
+            
             return fileName;
         } catch (e) {
             console.log(e);

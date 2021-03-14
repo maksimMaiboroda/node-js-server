@@ -3,8 +3,7 @@ import fileService from './fileService.js'
 
 class PostService {
     async create(post, picture){
-        const fileName = fileService.saveFile(picture);
-        console.log(fileName)
+        const fileName    = fileService.saveFile(picture);
         const createdPost = await Post.create({ ...post, picture: fileName});
 
         return createdPost;
